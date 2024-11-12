@@ -1,0 +1,7 @@
+{
+  "name": "agendou",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,44 @@
+<ion-row>
+  <div [ngClass]="login ? 'justify-content-center' : 'justify-content-around'"
+    class="container d-flex flex-column align-items-center">
+
+    <ion-icon *ngIf="login" (click)="voltar()" class="btn-back" style="font-size: 45px;"
+      name="chevron-back-circle-outline"></ion-icon>
+
+    <div [ngStyle]="{'margin-bottom': login ? '35px' : '0px'}"
+      class="container-logo d-flex flex-column align-items-center justify-content-center">
+      <ion-icon name="calendar-outline" class="img"></ion-icon>
+      <h1 class="title">WEB CALENDAR</h1>
+    </div>
+
+
+    <div *ngIf="!login" class="d-flex flex-column container-buttons justify-content-between">
+      <button (click)="logar()" class="btn-act btn-primary">Entrar</button>
+      <button class="btn-act btn-secondary">
+        <ion-icon style="margin-right: 5px;" name="logo-google"></ion-icon>
+        <span>Continuar com Google</span>
+      </button>
+    </div>
+
+    <div *ngIf="login" class="d-flex flex-column container-inputs justify-content-between">
+
+      <ion-item>
+        <ion-input shape="round" class="input-default" placeholder="E-mail"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input shape="round" class="input-default" placeholder="Senha"></ion-input>
+      </ion-item>
+
+      <button class="btn-act btn-secondary">
+        <span>Entrar</span>
+      </button>
+
+    </div>
+
+    <span *ngIf="login" [ngStyle]="{'margin-top': login ? '50px' : '0px'}">
+      <span (click)="acessar()" class="btn-link">Cadastre-se</span>
+      e comece a se organizar!
+    </span>
+
+  </div>
+</ion-row>
